@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 
 const NavBarDesktop = () => {
   return (
-    <Navbar className="bg-gray-300 h-30 px-8 flex justify-between">
+    <Navbar className="bg-gray-400 h-30 px-8 flex justify-between">
       <NavbarBrand className="text-4xl text-black font-bold">
         <a href="/">Johana GABA</a>
         <Link 
@@ -31,16 +31,6 @@ const NavBarDesktop = () => {
             About Me
           </Link>
         </NavbarItem>
-        <NavbarItem>  
-          <Link 
-            to="projects" 
-            smooth={true} 
-            duration={500} 
-            className="cursor-pointer text-black hover:text-blue-500"
-          >
-            Projects
-          </Link>
-        </NavbarItem>
         <NavbarItem>
           <Link 
             to="skills" 
@@ -49,6 +39,16 @@ const NavBarDesktop = () => {
             className="cursor-pointer text-black hover:text-blue-500"
           >
             Skills
+          </Link>
+        </NavbarItem>
+        <NavbarItem>  
+          <Link 
+            to="works" 
+            smooth={true} 
+            duration={500} 
+            className="cursor-pointer text-black hover:text-blue-500"
+          >
+            Works
           </Link>
         </NavbarItem>
       </NavbarContent>
