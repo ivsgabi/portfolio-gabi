@@ -2,6 +2,7 @@
 import React from "react";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box'
+import TypingEffectComponent from "@/components/TypingEffectComponent"; 
 
 function FormRow() {
   return (
@@ -25,8 +26,12 @@ export default function Home() {
        <section id="home" className="h-screen flex items-center justify-center">
         <Grid container spacing={2}>
           <Grid item xl={8}>
-            <div className='ml-30 mr-30 text-8xl'>
-              Hello World, I am Johana GABA blablabla,... (à compléter)
+            <div className='ml-30 text-7xl'>
+            <TypingEffectComponent inputs={[
+                "Hello World.",
+                "I'm Johana Gaba,",
+                "a Full Stack Developer and Data Enthusiast.",
+              ]} />
             </div>
           </Grid>
           <Grid item xl={4}>
