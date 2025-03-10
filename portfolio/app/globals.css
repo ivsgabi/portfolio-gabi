@@ -124,3 +124,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.C-icon-svg {
+  background-image: url("../public/images/C-logo.png");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 300px;
+}

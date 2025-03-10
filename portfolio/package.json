@@ -11,6 +11,8 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@heroui/card": "^2.2.15",
+    "@heroui/react": "^2.7.5",
     "@mui/material": "^6.4.7",
     "@nextui-org/react": "^2.6.11",
     "@radix-ui/react-slot": "^1.1.2",
