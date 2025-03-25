@@ -10,12 +10,12 @@
 !.yarn/releases
 !.yarn/versions
 
+# testing
+/coverage
+
 # next.js
 /.next/
 /out/
-
-# testing
-/coverage
 
 # production
 /build
@@ -39,26 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# portfolio ver.
-/portfolio/node_modules
-/portfolio/.pnp
-/portfolio/.pnp.*
-/portfolio/.yarn/*
-/portfolio/!.yarn/patches
-/portfolio/!.yarn/plugins
-/portfolio/!.yarn/releases
-/portfolio/!.yarn/versions
-/portfolio/coverage
-/portfolio/build
-/portfolio/.DS_Store
-/portfolio/*.pem
-/portfolio/npm-debug.log*
-/portfolio/yarn-debug.log*
-/portfolio/yarn-error.log*
-/portfolio/.pnpm-debug.log*
-/portfolio/.env*
-/portfolio/.vercel
-/portfolio/*.tsbuildinfo
-/portfolio/next-env.d.ts
-
