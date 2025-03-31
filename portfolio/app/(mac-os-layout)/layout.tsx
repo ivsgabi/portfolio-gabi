@@ -1,8 +1,10 @@
-// MAIN LAYOUT - FIRST PAGE
+// MAC OS SIDE LAYOUT
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./../globals.css";
+import FinderBarComponent from "@/components/macOs-linux/FinderBarComponent";
+import ApplicationBarComponent from "@/components/macOs-linux/ApplicationsBarComponent"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +28,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        <header>
+            <FinderBarComponent/>
+        </header>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      
       >
         {children}
       </body>
+      <footer>
+        <ApplicationBarComponent/>
+      </footer>
     </html>
   );
 }
