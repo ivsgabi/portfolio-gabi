@@ -1,9 +1,10 @@
-// WINDOWS SIDE LAYOUT
+// MAC OS SIDE LAYOUT
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import WindowsMenuComponent from "@/components/WindowsMenuComponent";
+import "./../globals.css";
+import TopBarComponent from "@/components/TopBarComponent";
+import ApplicationBarComponent from "@/components/ApplicationsBarComponent"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,17 +28,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <header>
-            <WindowsMenuComponent/>
-        </header>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <header>
+        <TopBarComponent />
+      </header>
+      <main>
         {children}
-      </body>
+        </main>
       <footer>
-        
+        <ApplicationBarComponent />
       </footer>
-    </html>
-  );
+    </body>
+  </html>
+);
 }

@@ -13,9 +13,8 @@ export function OSChoiceButton() {
       <Card className="w-[670px] shadow-lg rounded-lg bg-transparent-gray">
         <CardContent className="flex justify-center space-x-4">
           <Button asChild className="h-40 w-70 bg-transparent-gray shadow-xl">
-            <Link href="/macOS-linux">MacOS - Linux</Link>
+            <Link href="/macOS-linux">Johana GABA</Link>
         </Button>
-          <Button className="h-40 w-70 bg-transparent-gray shadow-xl">Windows</Button>
         </CardContent>
       </Card>
     </div>

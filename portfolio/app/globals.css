@@ -120,3 +120,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* -------------------------------------------------- CUSTOM COLORS -------------------------------------------------- */
+/* --------------------------------------- why is my tailwing not working ??? ---------------------------------------- */
+
+.transparent-white {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.more-transparent-white {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* --------------------------------------- why is my tailwing not working ??? ---------------------------------------- */
+/* -------------------------------------------------- CUSTOM COLORS -------------------------------------------------- */
+
+.blue-gradient-wallpaper-svg {
+  background-image: url("/blue-gradient-wallpaper.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: repeat-x;
+  position: fixed;
+  width: 100vw;
+  height: 100vh; 
+  z-index: -1;
+}
+
+.JG-icon-gray-svg {
+  background-image: url("/JG-gray.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 45;
+  height: 45; 
+}
