@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator"
 import AppGroupComponent from "./AppGroupComponent";
-import { WebToolsMap } from "@/app/data/app-groups-infos";
+import { WebToolsMap, DevOpsMap, OthersMap } from "@/app/data/app-groups-infos";
 
 export default function ApplicationBarComponent() {
   return ( 
@@ -39,8 +39,8 @@ export default function ApplicationBarComponent() {
       </Button>
 
       <AppGroupComponent buttonLook={"webtools-group-icon-svg"} groupTitle={"Web Development Tools"} content={WebToolsMap}></AppGroupComponent>
-      <AppGroupComponent buttonLook={"devops-group-icon-svg"} groupTitle={"DevOps"} content={WebToolsMap}></AppGroupComponent>
-      <AppGroupComponent buttonLook={"others-group-icon-svg"} groupTitle={"Others"} content={WebToolsMap}></AppGroupComponent>
+      <AppGroupComponent buttonLook={"devops-group-icon-svg"} groupTitle={"DevOps"} content={DevOpsMap}></AppGroupComponent>
+      <AppGroupComponent buttonLook={"others-group-icon-svg"} groupTitle={"Others"} content={OthersMap}></AppGroupComponent>
 
       <Separator orientation="vertical" className="more-transparent-white ml-5 mr-5"/>
       {/* peut-être que j'utiliserai un autre divider */}

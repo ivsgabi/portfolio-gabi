@@ -184,6 +184,22 @@
   background-color: #ffdcab;
 }
 
+.bg-aws-gray {
+  background-color: #232F3E;
+}
+
+.bg-excel-green {
+  background-color: #1F7244;
+}
+
+.bg-windows-blue {
+  background-color: #0077D5;
+}
+
+.bg-trello-blue {
+  background-color: #007AC2
+  ;
+}
 
 /* --------------------------------------- why is my tailwing not working ??? ---------------------------------------- */
 /* -------------------------------------------------- CUSTOM COLORS -------------------------------------------------- */
@@ -431,4 +447,130 @@
   background-repeat: no-repeat;
   width: 75; 
   height: 75;
+}
+
+.github-actions-icon-svg {
+  background-image: url("/skills-icons/github-actions-icon.svg"); 
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.docker-icon-svg {
+  background-image: url("/skills-icons/docker-icon.svg"); 
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.jenkins-icon-svg {
+  background-image: url("/skills-icons/jenkins-icon.svg"); 
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.kubernetes-icon-svg {
+  background-image: url("/skills-icons/kubernetes-icon.svg"); 
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.aws-icon-svg {
+  background-image: url("/skills-icons/aws-icon.svg"); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 120; 
+  height: 120;
+}
+
+.azure-icon-svg {
+  background-image: url("/skills-icons/azure-icon.svg"); 
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.google-cloud-icon-svg {
+  background-image: url("/skills-icons/google-cloud-icon.svg"); 
+  background-size: contain; 
+  background-position: contain; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.excel-icon-svg {
+  background-image: url("/skills-icons/excel-icon.svg"); 
+  background-size: contain; 
+  background-position: contain; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.powerbi-icon-svg {
+  background-image: url("/skills-icons/power-bi-icon.svg"); 
+  background-size: contain; 
+  background-position: contain; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.linux-icon-svg {
+  background-image: url("/skills-icons/linux-icon.svg"); 
+  background-size: contain; 
+  background-position: contain; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.windows-icon-svg {
+  background-image: url("/skills-icons/windows-10-icon.svg"); 
+  background-size: cover; 
+  background-position: contain; 
+  background-repeat: no-repeat;
+  width: 65; 
+  height: 65;
+}
+
+.agile-icon-svg {
+  background-image: url("/skills-icons/agile-icon.svg"); 
+  background-size: contain; 
+  background-position: contain; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.notion-icon-svg {
+  background-image: url("/skills-icons/notion-icon.svg"); 
+  background-size: contain; 
+  background-position: contain; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.trello-icon-svg {
+  background-image: url("/skills-icons/trello-icon.svg"); 
+  background-size: contain; 
+  background-position: contain; 
+  background-repeat: no-repeat;
+  width: 80; 
+  height: 80;
 }
