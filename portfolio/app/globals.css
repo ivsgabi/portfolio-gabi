@@ -132,6 +132,58 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.ts-blue {
+  background-color: #007acc;
+}
+
+.js-yellow {
+  background-color: #f7df1e;
+}
+
+.linkedIn-blue {
+  background-color: #0a66c2;
+}
+
+.mail-upper-blue {
+  background-color: #1d62f0;
+}
+
+.mail-bottom-blue {
+  background-color: #1AD5FD;
+}
+
+.bg-html-orange {
+  background-color: #ffab87;
+}
+
+.bg-css-blue {
+  background-color: #95d1f6;
+}
+
+.bg-c-purple {
+  background-color: #a8b1e4;
+}
+
+.bg-cpp-blue {
+  background-color: #9dceff;
+}
+
+.bg-python-gray {
+  background-color: #324A5E;
+}
+
+.bg-tailwind-gray {
+  background-color: #202124;
+}
+
+.bg-postgres-blue {
+  background-color: #336891;
+}
+
+.bg-mysql-orange {
+  background-color: #ffdcab;
+}
+
 
 /* --------------------------------------- why is my tailwing not working ??? ---------------------------------------- */
 /* -------------------------------------------------- CUSTOM COLORS -------------------------------------------------- */
@@ -152,7 +204,231 @@
   background-size: contain;
   background-position: center; 
   background-repeat: no-repeat;
-  position: fixed;
   width: 45;
-  height: 45; 
+  height: 45;
+}
+
+.C-icon-svg {
+  background-image: url("/skills-icons/c-program-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.CPP-icon-svg {
+  background-image: url("/skills-icons/c-plus-plus-programming-language-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.python-icon-svg {
+  background-image: url("/skills-icons/python-programming-language-icon.svg"); 
+  background-size: cnver;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.TS-icon-svg {
+  background-image: url("/skills-icons/typescript-programming-language-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.JS-icon-svg {
+  background-image: url("/skills-icons/javascript-programming-language-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.react-icon-svg {
+  background-image: url("/skills-icons/react-js-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.nextJS-icon-svg {
+  background-image: url("/skills-icons/nextjs-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.go-icon-svg {
+  background-image: url("/skills-icons/go-programming-language-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.HTML-icon-svg {
+  background-image: url("/skills-icons/html-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.CSS-icon-svg {
+  background-image: url("/skills-icons/css-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+
+.git-icon-svg {
+  background-image: url("/skills-icons/git-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 65;
+  height: 65;
+}
+
+.github-icon-svg {
+  background-image: url("/skills-icons/github-white-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 60;
+  height: 60;
+}
+
+.linkedin-icon-svg {
+  background-image: url("/skills-icons/linkedin-app-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 70;
+  height: 70;
+}
+
+.github-profile-icon-svg {
+  background-image: url("/skills-icons/github-profile-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 86; 
+  height: 86;
+}
+
+.mail-icon-svg {
+  background-image: url("/skills-icons/apple-envelope-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 92; 
+  height: 92;
+}
+
+.webtools-group-icon-svg {
+  background-image: url("/skills-icons/webtools-group-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 65; 
+  height: 65;
+}
+
+.devops-group-icon-svg {
+  background-image: url("/skills-icons/devops-group-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 65; 
+  height: 65;
+}
+
+.others-group-icon-svg {
+  background-image: url("/skills-icons/others-group-icon.svg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 65; 
+  height: 65;
+}
+
+.tailwind-icon-svg {
+  background-image: url("/skills-icons/tailwind-css-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 65; 
+  height: 65;
+}
+
+.sql-icon-svg {
+  background-image: url("/skills-icons/sql-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 65; 
+  height: 65;
+}
+
+.postgresql-icon-svg {
+  background-image: url("/skills-icons/postgresql-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 65; 
+  height: 65;
+}
+
+.mysql-icon-svg {
+  background-image: url("/skills-icons/mysql-icon.svg"); 
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 65; 
+  height: 65;
+}
+
+.snowflake-icon-svg {
+  background-image: url("/skills-icons/snowflake-icon.svg"); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.mongodb-icon-svg {
+  background-image: url("/skills-icons/mongodb-icon.svg"); 
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
+}
+
+.api-icon-svg {
+  background-image: url("/skills-icons/api-icon.svg"); 
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 75; 
+  height: 75;
 }
