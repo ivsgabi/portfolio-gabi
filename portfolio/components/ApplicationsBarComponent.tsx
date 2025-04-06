@@ -44,7 +44,7 @@ export default function ApplicationBarComponent() {
 
       <Separator orientation="vertical" className="more-transparent-white ml-5 mr-5"/>
       {/* peut-être que j'utiliserai un autre divider */}
-      <Button className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] github-profile-icon-svg bg-black">
+      <Button asChild className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] github-profile-icon-svg bg-black">
         <Link href="https://github.com/ivsgabi"/>
       </Button>
       <Button className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] linkedIn-blue">

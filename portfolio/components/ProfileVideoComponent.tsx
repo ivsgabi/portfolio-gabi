@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function ProfileVideo() {
   const [isVideoFinished, setIsVideoFinished] = useState(false);
-  const [currentGif, setCurrentGif] = useState("/memoji-welcome-video.gif");
+  const [currentGif, setCurrentGif] = useState("memoji/memoji-welcome-video.gif");
 
   const handleVideoEnd = () => {
     setIsVideoFinished(true);

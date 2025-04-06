@@ -56,6 +56,3 @@ export default function AppGroupComponent({ buttonLook, groupTitle, content }: A
   );
 }
 
-
-{/* // devops part: git, github, github actions, docker, jenkins, kubernetes, AWS, Azure, Google Cloud */}
-{/* // autre: pack office word, excel, powerbi, powerpoint, linux/macos, windows, certifications */}
