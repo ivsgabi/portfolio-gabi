@@ -7,10 +7,10 @@ import ProfileVideo from "./ProfileVideoComponent";
 export function ProfileButton() {
   return (
     <div className="relative flex items-center justify-center h-screen">      
-      <Link href="/macOS-linux">
+      <Link href="/loading">
         <Button 
           asChild
-          className="h-120 more-transparent-white rounded-2xl transparent-white transition-transform duration-300 hover:translate-y-[-3px] hover:shadow-xl"
+          className="h-120 more-transparent-white rounded-2xl transparent-white transition-transform duration-300 hover:translate-y-[-5px] hover:shadow-xl"
         >
           <div className="justify-center items-center w-83 flex flex-col">
             <ProfileVideo />

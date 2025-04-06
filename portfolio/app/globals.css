@@ -204,15 +204,44 @@
 /* --------------------------------------- why is my tailwing not working ??? ---------------------------------------- */
 /* -------------------------------------------------- CUSTOM COLORS -------------------------------------------------- */
 
-.blue-gradient-wallpaper-svg {
-  background-image: url("/blue-gradient-wallpaper.svg"); 
-  background-size: contain;
+.wallpaper-pic {
+  background-image: url("/wallpapers/fav-canada-wallpaper.jpg"); 
+  background-size: cover;
   background-position: center; 
   background-repeat: repeat-x;
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh; 
   z-index: -1;
+}
+
+.welcome-wallpaper-pic {
+  background-image: url("/wallpapers/fav-canada-wallpaper.jpg"); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100w;
+  height: 100%;
+  z-index: -1; 
+  filter: blur(10px); 
+}
+
+
+.memoji-container {
+  opacity: 100;
+  transform: scale(0.8);
+  transition: opacity 1s ease, transform 1s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; 
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8); 
 }
 
 .JG-icon-gray-svg {
