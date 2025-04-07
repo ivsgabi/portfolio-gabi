@@ -19,7 +19,7 @@ export default function AppGroupComponent({ buttonLook, groupTitle, content }: A
   return (
     <div className="flex justify-center items-center h-screen">
       <Button
-        className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] transparent-white"
+        className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] transparent-grey"
         onClick={toggleBox}
       >
         <div className={buttonLook} />
@@ -28,7 +28,7 @@ export default function AppGroupComponent({ buttonLook, groupTitle, content }: A
       <div
         className={`${
           isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"
-        } transition-all duration-500 ease-out w-[47%] h-[65vh] transparent-white rounded-[60px] absolute flex justify-center items-center`}
+        } transition-all duration-500 ease-out w-[47%] h-[65vh] transparent-grey rounded-[60px] absolute flex justify-center items-center`}
         style={{
           top: isOpen ? "-360%" : "0",
           left: "50%", 

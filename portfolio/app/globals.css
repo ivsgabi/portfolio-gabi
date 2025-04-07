@@ -128,12 +128,20 @@
   background-color: rgba(255, 255, 255, 0.45);
 }
 
+.transparent-grey {
+  background-color: rgba(58, 58, 58, 0.808);
+}
+
 .transparent-black {
   background-color: rgba(0, 0, 0, 0.45);
 }
 
 .more-transparent-white {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.more-transparent-grey {
+  background-color: rgba(58, 58, 58, 0.63);
 }
 
 .ts-blue {
@@ -232,7 +240,6 @@
   z-index: -1; 
   filter: blur(10px); 
 }
-
 
 .memoji-container {
   opacity: 100;

@@ -6,7 +6,7 @@ import { WebToolsMap, DevOpsMap, OthersMap } from "@/app/data/app-groups-infos";
 
 export default function ApplicationBarComponent() {
   return ( 
-    <div className="fixed bottom-3 left-1/2 transform -translate-x-1/2 w-[85%] h-30 transparent-white flex items-center justify-center rounded-4xl shadow-lg text-black">
+    <div className="fixed bottom-3 left-1/2 transform -translate-x-1/2 w-[85%] h-30 transparent-grey flex items-center justify-center rounded-4xl shadow-lg text-black">
       <Button className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] bg-c-purple ">
         <div className="C-icon-svg"/>
       </Button>
@@ -42,7 +42,7 @@ export default function ApplicationBarComponent() {
       <AppGroupComponent buttonLook={"devops-group-icon-svg"} groupTitle={"DevOps"} content={DevOpsMap}></AppGroupComponent>
       <AppGroupComponent buttonLook={"others-group-icon-svg"} groupTitle={"Others"} content={OthersMap}></AppGroupComponent>
 
-      <Separator orientation="vertical" className="more-transparent-white ml-5 mr-5"/>
+      <Separator orientation="vertical" className="more-transparent-grey ml-5 mr-5"/>
       {/* peut-être que j'utiliserai un autre divider */}
       <Button asChild className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] github-profile-icon-svg bg-black">
         <Link href="https://github.com/ivsgabi"/>

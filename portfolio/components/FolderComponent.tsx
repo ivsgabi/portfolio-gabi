@@ -1,5 +1,6 @@
 'use client';
 import { useState } from "react";
+import FolderWindow from "./FolderWindowComponent";
 
 interface AppGroupConfig {
   buttonLook: string;
@@ -8,29 +9,30 @@ interface AppGroupConfig {
 
 export default function FolderButton({ buttonLook, content }: AppGroupConfig) {
   const [isOpen, setIsOpen] = useState(false);
+  
   const toggleBox = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div>
+    <div className="relative">
       <div 
         onClick={toggleBox}
-        className={`relative cursor-pointer ${isOpen ? "bg-pink-400 h-50 w-50" : "bg-transparent "} transition-all duration-300 ease-out`} 
+        className={`relative cursor-pointer transition-all duration-300 ease-out`}
       >
-        <div className={buttonLook}/>
+        <div className={buttonLook} />
       </div>
 
-      <div
-        className={`${
-          isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
-        style={{
-          transform: isOpen ? "translate(-50%, -50%)" : "translate(-50%, -50%)",
-          zIndex: isOpen ? 10 : -10,
-        }}
-      />
-      
-      <div className={`${isOpen ? "text-center mt-2 text-white" : "text-transparent"}`}>{content}</div>
+      {isOpen && (
+        <div 
+          className="folder-window-container fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50"
+        >
+          <FolderWindow />
+        </div>
+      )}
+      <div className="opacity-100 text-center mt-[-15px] ml-[-10px] text-white transition-all duration-300 ease-out" >
+        {content}
+      </div>
     </div>
   );
 }

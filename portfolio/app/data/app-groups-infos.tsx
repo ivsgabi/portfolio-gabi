@@ -44,7 +44,7 @@ let powerBiValues: string[] = ['powerbi-icon-svg', 'bg-white', 'infos blablabla'
 let agileValues: string[] = ['agile-icon-svg', 'bg-white', 'infos blablabla'];
 let notionValues: string[] = ['notion-icon-svg', 'bg-white', 'infos blablabla'];
 let trelloValues: string[] = ['trello-icon-svg', 'bg-white', 'infos blablabla'];
-let linuxValues: string[] = ['linux-icon-svg', 'transparent-white', 'infos blablabla'];
+let linuxValues: string[] = ['linux-icon-svg', 'transparent-grey', 'infos blablabla'];
 let windowsValues: string[] = ['windows-icon-svg', 'bg-windows-blue', 'infos blablabla'];
 
 
