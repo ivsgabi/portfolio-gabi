@@ -23,9 +23,9 @@ export default function TopBarComponent() {
           <h4>
             <BsToggles size="20" className="mr-3 ml-3" />
           </h4>
-          <h5>
+          <div>
             <RealTimeDate/>
-          </h5>
+          </div>
        
         </div>
       </div>

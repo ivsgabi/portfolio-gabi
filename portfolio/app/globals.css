@@ -213,6 +213,19 @@
   ;
 }
 
+.bg-weather-upper-blue {
+  background-color: #104B85
+  ;
+}
+
+.bg-weather-bottom-blue {
+  background-color: #5B8BC0;
+}
+
+.bg-gradient-weather {
+  background: linear-gradient(90deg, rgba(16, 75, 133, 0.55) 0%, rgba(91, 139, 192, 0.50) 100%);
+}
+
 /* --------------------------------------- why is my tailwing not working ??? ---------------------------------------- */
 /* -------------------------------------------------- CUSTOM COLORS -------------------------------------------------- */
 
@@ -608,24 +621,6 @@
 
 .trello-icon-svg {
   background-image: url("/skills-icons/trello-icon.svg"); 
-  background-size: contain; 
-  background-position: contain; 
-  background-repeat: no-repeat;
-  width: 80; 
-  height: 80;
-}
-
-.purple-folder-icon-pic {
-  background-image: url("/skills-icons/trello-icon.svg"); 
-  background-size: contain; 
-  background-position: contain; 
-  background-repeat: no-repeat;
-  width: 80; 
-  height: 80;
-}
-
-.purple-folder-icon-pic {
-  background-image: url("/os-design/folder-purple.png"); 
   background-size: contain; 
   background-position: contain; 
   background-repeat: no-repeat;
