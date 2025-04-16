@@ -30,7 +30,7 @@ export default function FolderButton({ folderLook, name, content }: AppGroupConf
         </div>
       )}
 
-      <div className="opacity-100 text-center mt-[-15px] ml-[-10px] text-white transition-all duration-300 ease-out">
+      <div className="opacity-100 text-center mt-[-15px] ml-[-10px] text-white transition-all duration-300 ease-out text-xl">
         {name}
         {isOpen && <span className="ml-2 text-green-500">●</span>}
       </div>
