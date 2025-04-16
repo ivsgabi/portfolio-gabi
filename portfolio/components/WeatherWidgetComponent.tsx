@@ -21,7 +21,7 @@ export default function WeatherWidget() {
       setWeather({
         description: data.weather[0].description,
         temperature: data.main.temp,
-      });
+      }); 
     } catch (error) {
       console.error("Weather API - Retrieving ERROR: ", error);
     }
