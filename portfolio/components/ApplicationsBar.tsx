@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator"
-import AppGroupComponent from "./AppGroupComponent";
+import AppGroupComponent from "./ApplicationGroup";
 import { WebToolsMap, DevOpsMap, OthersMap } from "@/app/data/app-groups-infos";
 
 export default function ApplicationBarComponent() {
@@ -47,8 +47,8 @@ export default function ApplicationBarComponent() {
       <Button asChild className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] github-profile-icon-svg bg-black">
         <Link href="https://github.com/ivsgabi"/>
       </Button>
-      <Button className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] linkedIn-blue">
-        <div className="linkedin-icon-svg" />
+      <Button asChild className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] linkedIn-blue linkedin-icon-svg">
+          <Link href="https://www.linkedin.com/in/johana-gaba-54865926b/"/>
       </Button>
       {/* image custom button */}
       <div className="mail-icon-svg mr-1 transition-transform duration-300 hover:translate-y-[-10px]"/>

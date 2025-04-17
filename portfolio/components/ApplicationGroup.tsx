@@ -38,13 +38,12 @@ export default function AppGroupComponent({ buttonLook, groupTitle, content }: A
       <div>
         <h1 className="text-4xl font-bold mb-10 justify-center flex text-white">{groupTitle}</h1>
           <div className="grid grid-cols-3 gap-x-15 gap-y-5  justify-start">
-          {Array.from(content).map(([key, value], index) => (
-            <div>
+          {Array.from(content).map(([key, value]) => (
+            <div key={key}>
               <Button
-                key={index}
                 className={`h-[120px] w-[120px] rounded-3xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] ${value[1]}`}
               >
-                <div className={value[0]}/>
+                <div className={value[0]} />
               </Button>
               <p className="text-white text-center mt-2">{key}</p>
             </div>

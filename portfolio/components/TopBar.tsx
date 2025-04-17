@@ -5,7 +5,7 @@ import RealTimeDate from "./DateComponent";
 
 export default function TopBarComponent() {
     return (
-      <div className="h-12 w-full transparent-grey flex text-white">
+      <div className="justify-top h-12 w-screen transparent-grey flex text-white">
         <div className="ml-7 mb-1 mt-[15px] flex">
           <h1 className="mt-[-5px]  w-7 h-7 rounded-full bg-white"/>
           <h2 className="ml-5 text-sm">Help</h2>

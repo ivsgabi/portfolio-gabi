@@ -2,7 +2,7 @@ import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import ProfileVideo from "./ProfileVideoComponent";
+import ProfileVideo from "./ProfileVideo";
 
 export function ProfileButton() {
   return (

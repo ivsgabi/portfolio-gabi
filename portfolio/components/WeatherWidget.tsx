@@ -9,13 +9,26 @@ interface WeatherAPIResponse {
   main: { temp: number };
 }
 
+type WeatherData = {
+  description: string;
+  temperature: number;
+} | 'SERVER_ERROR' | null;
+
 export default function WeatherWidget() {
-  const [weather, setWeather] = useState<{ description: string; temperature: number } | null>(null);
+  const [weather, setWeather] = useState<WeatherData>(null);
 
   async function getMeteoFromAPI() {
     try {
       const res = await fetch(`/api/weather?q=${CITY}`);
+
+      if (res.status === 500) {
+        const errorData = await res.json();
+        setWeather({ description: errorData.error, temperature: 0 }); // ou status: 'error'
+        return;
+      }
+      
       if (!res.ok) throw new Error("Erreur lors de l'appel API");
+
       const data: WeatherAPIResponse = await res.json();
 
       setWeather({
@@ -24,6 +37,7 @@ export default function WeatherWidget() {
       }); 
     } catch (error) {
       console.error("Weather API - Retrieving ERROR: ", error);
+      setWeather(null);
     }
   }
 
@@ -42,10 +56,12 @@ export default function WeatherWidget() {
 
         <div className='ml-13'>
           <h1 className="font-bold text-4xl mb-2">{CITY}</h1>
-          {weather ? (
+          {weather === 'SERVER_ERROR' ? (
+            <p className="text-red-200 text-sm">Failed to retrieve temperature. Need administrator action.</p>
+          ) : weather ? (
             <>
               <p className="text-7xl font-extrabold mb-1">
-                {weather.temperature.toString().slice(0, 2)}°
+                {weather.temperature.toString().split(".")[0]}°
               </p>
               <p className="text-xl text-gray-200 capitalize">{weather.description}</p>
             </>
