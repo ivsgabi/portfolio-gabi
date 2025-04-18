@@ -8,8 +8,8 @@ export default function LoadingPage() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push('/macOS-linux'); 
-    }, 4000);
+      router.push('/desktop'); 
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [router]);

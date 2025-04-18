@@ -1,5 +1,6 @@
 'use client';
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
+import { IoIosArrowBack } from "react-icons/io";
 
 interface FolderWindowProps {
   closeWindow: () => void;
@@ -7,6 +8,9 @@ interface FolderWindowProps {
 
 export default function ExperienceFolder({ closeWindow }: FolderWindowProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const [isEpitechOpen, setIsEpitechOpen] = useState(false);
+  const [isNricherOpen, setIsNricherOpen] = useState(false);
+  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100); 
@@ -15,7 +19,7 @@ export default function ExperienceFolder({ closeWindow }: FolderWindowProps) {
   return (
     <div className="flex items-center justify-center bg-transparent w-[60vw]">
       <div
-        className={`relative w-[100%] h-[60vh] bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-500 ease-out transform ${
+        className={`relative w-full h-[60vh] bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-500 ease-out transform ${
           isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"
         }`}
       >
@@ -32,26 +36,167 @@ export default function ExperienceFolder({ closeWindow }: FolderWindowProps) {
         </div>
 
         <div className="p-4 space-y-4 overflow-auto h-full">
+          {!isEpitechOpen && !isNricherOpen  && !isProjectsOpen ? (
             <div className="flex space-x-15 mx-5">
-              <div className="flex-cols h-30 w-30">
-                <div className="pale-pink-folder-icon-pic mt-[-5]"/>
+              <div className="flex-cols h-30 w-30 cursor-pointer" onClick={() => setIsEpitechOpen(true)}>
+                <div className="pale-pink-folder-icon-pic mt-[-5]" />
                 <span className="items-center justify-center ml-12 mt-[-10] flex text-center text-black text-sm">Epitech</span>
               </div>
-              <div className="flex-cols h-30 w-30">
-                <div className="pale-pink-folder-icon-pic mt-[-5]"/>
-                <span className="items-center justify-center ml-12 mt-[-10] flex text-center text-black text-sm">nricher</span>
-              </div>
-              <div className="flex-cols h-30 w-30">
-                <div className="pale-pink-folder-icon-pic mt-[-5]"/>
-                <span className="items-center justify-center ml-11 mt-[-10] flex text-center text-black text-sm">Apple Retail</span>
-              </div>
-              <div className="flex-cols h-30 w-30">
-                <div className="pale-pink-folder-icon-pic mt-[-5]"/>
-                <span className="items-center justify-center ml-11 mt-[-10] flex text-center text-black text-sm">projects</span>
+
+              <div className="flex-cols h-30 w-30 cursor-pointer" onClick={() => setIsNricherOpen(true)}>
+                <div className="pale-pink-folder-icon-pic mt-[-5]" />
+                <span className="items-center justify-center ml-12 mt-[-10] flex text-center text-black text-sm">Nricher</span>
               </div>
 
+              <div className="flex-cols h-30 w-30 cursor-pointer" onClick={() => setIsProjectsOpen(true)}>
+                <div className="pale-pink-folder-icon-pic mt-[-5]" />
+                <span className="items-center justify-center ml-11 mt-[-10] flex text-center text-black text-sm">favorites projects</span>
+              </div>
+            </div>
+          ) : null}
+
+          {isEpitechOpen && (
+            <div className="p-4 space-y-4">
+              <IoIosArrowBack onClick={() => setIsEpitechOpen(false)} className="absolute mt-[-20] left-5 text-gray-400 h-5 w-5"/>
+              <div className="p-4 space-y-4 h-full">
+                <div className="flex space-x-3  mt-[-30]">
+                  <a href="./folder-content/XP/astek-role.pdf" target="_blank" rel="noopener noreferrer">
+                    <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                      <div className="pink-file-icon-pic mt-[-20]" />
+                      <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                        astek tasks
+                      </span>
+                    </div>
+                  </a>
+                  <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                    <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                      <div className="pink-file-icon-pic mt-[-20]" />
+                      <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                        stack
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {isNricherOpen && (
+            <div className="p-4 space-y-4">
+            <IoIosArrowBack onClick={() => setIsNricherOpen(false)} className="absolute mt-[-20] left-5 text-gray-400 h-5 w-5"/>
+            <div className="p-4 space-y-4 h-full">
+              <div className="flex space-x-3  mt-[-30]">
+                <a href="./folder-content/XP/astek-role.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      data analyst-python developer tasks
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      stack
+                    </span>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
+          )}
+
+          {isProjectsOpen && (
+            <div className="p-4 space-y-4">
+            <IoIosArrowBack onClick={() => setIsProjectsOpen(false)} className="absolute mt-[-20] left-5 text-gray-400 h-5 w-5"/>
+            <div className="p-4 justify-center flex w-full">
+              <div className="grid grid-cols-6 gap-y-30 gap-x-15 mt-[-30]">
+                <a href="./folder-content/XP/astek-role.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      BSQ - C
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      minishell - C
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      Image Compressor - Haskell
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      myFTP - C
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      my_printf - C
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      my_paint - C, CSFML
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      my_paint - C, CSFML
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      raytracer - C++
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      AREA - NestJS, NextJS
+                    </span>
+                  </div>
+                </a>
+                <a href="./folder-content/XP/astek-stack.pdf" target="_blank" rel="noopener noreferrer">
+                  <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                      RType - C++
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          )}
+        </div>
       </div>
     </div>
   );

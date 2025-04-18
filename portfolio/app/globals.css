@@ -384,11 +384,11 @@
 
 .linkedin-icon-svg {
   background-image: url("/skills-icons/linkedin-app-icon.svg"); 
-  background-size: cover;
+  background-size: contain;
   background-position: center; 
   background-repeat: no-repeat;
-  width: 70;
-  height: 70;
+  width: 86;
+  height: 86;
 }
 
 .github-profile-icon-svg {
@@ -638,6 +638,16 @@
   background-size: contain; 
   background-position: contain; 
   background-repeat: no-repeat;
-  width: 80; 
-  height: 80;
+  width: 165; 
+  height: 165;
 }
+
+.pink-file-icon-pic {
+  background-image: url("/os-design/pink-file-icon.png"); 
+  background-size: contain; 
+  background-position: contain; 
+  background-repeat: no-repeat;
+  width: 200; 
+  height: 200;
+}
+

@@ -55,7 +55,7 @@ export default function JohanaFolder({ closeWindow }: FolderWindowProps) {
 
           <div className="p-4 space-y-4 overflow-auto h-full">
             <div className="flex space-x-3 mx-5">
-            <a href="./CV/CV-portfolio-FR-GABA.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="./folder-content/CV/CV-portfolio-FR-GABA.pdf" target="_blank" rel="noopener noreferrer">
               <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                 <div className="pink-file-icon-pic mt-[-20]" />
                 <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
@@ -63,7 +63,7 @@ export default function JohanaFolder({ closeWindow }: FolderWindowProps) {
                 </span>
               </div>
             </a>
-            <a href="./CV/CV-portfolio-EN-GABA.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="./folder-content/CV/CV-portfolio-EN-GABA.pdf" target="_blank" rel="noopener noreferrer">
               <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                 <div className="pink-file-icon-pic mt-[-20]" />
                 <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
@@ -71,14 +71,14 @@ export default function JohanaFolder({ closeWindow }: FolderWindowProps) {
                 </span>
               </div>
             </a>
-            <a href="./CV/CV-portfolio-FR-GABA.pdf" target="_blank" rel="noopener noreferrer">
+            {/* <a href="./CV/CV-portfolio-FR-GABA.pdf" target="_blank" rel="noopener noreferrer">
               <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                 <div className="pink-file-icon-pic mt-[-20]" />
                 <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
                   about me
                 </span>
               </div>
-            </a>
+            </a> */}
             </div>
           </div>
         </div>
