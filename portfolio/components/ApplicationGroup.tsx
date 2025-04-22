@@ -8,8 +8,6 @@ interface AppGroupConfig {
   content: Map<string, Array<string>>,
 }
 
-// array -> [0] .svg, [1] infos
-
 export default function AppGroupComponent({ buttonLook, groupTitle, content }: AppGroupConfig) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleBox = () => {

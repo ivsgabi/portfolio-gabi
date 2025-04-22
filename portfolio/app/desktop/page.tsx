@@ -13,9 +13,9 @@ export default function Desktop() {
       </header>
       <div className="mt-20 ml-10">
         <div className="absolute top-10 left-10 grid grid-cols-2 gap-y-10 gap-x-20 mt-20 ml-10 mr-10">
-          <FolderButton folderLook="pink-folder-icon-pic" name="Johana" />
+          <FolderButton folderLook="pink-folder-icon-pic" name="CV" />
           <FolderButton folderLook="pink-folder-icon-pic" name="XP" />
-          <FolderButton folderLook="pink-folder-icon-pic" name="+" />
+          <FolderButton folderLook="pink-folder-icon-pic" name="Johana" />
         </div>
       <div className="absolute top-5 right-5 mt-20 mr-10">
         <WeatherWidget/>

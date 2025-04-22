@@ -2,7 +2,7 @@
 import { useState } from "react";
 import JohanaFolder from "./folders/JohanaFolder";
 import ExperienceFolder from "./folders/ExperienceFolder";
-import MoreFolder from "./folders/MoreFolder";
+import CVFolder from "./folders/CVFolder";
 
 interface AppGroupConfig {
   folderLook: string;
@@ -29,7 +29,7 @@ export default function FolderButton({ folderLook, name }: AppGroupConfig) {
         <div className="folder-window-container fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50">
          {name == "Johana" ? <JohanaFolder closeWindow={toggleBox} /> : ""}
          {name == "XP" ? <ExperienceFolder closeWindow={toggleBox} /> : ""}
-         {name == "+" ? <MoreFolder closeWindow={toggleBox} /> : ""}
+         {name == "CV" ? <CVFolder closeWindow={toggleBox} /> : ""}
         </div>
       )}
 
