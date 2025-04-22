@@ -43,7 +43,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ fileUrl, onClose }) => {
         className={`${
           isEnlarge
             ? 'fixed top-0 left-0 w-full h-full z-[9999]'
-            : 'fixed top-0  justify-center w-[45vw] h-[85vh] z-[9999]'
+            : 'fixed top-8  justify-center w-[45vw] h-[85vh] z-[9999]'
         } bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
           isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
         }`}
@@ -68,13 +68,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ fileUrl, onClose }) => {
             <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />
           </Worker>
         )}
-
-        <button
-          className="absolute top-4 right-4 text-white text-3xl font-bold"
-          onClick={onClose}
-        >
-          ✕
-        </button>
+    
       </div>
     </>
   );

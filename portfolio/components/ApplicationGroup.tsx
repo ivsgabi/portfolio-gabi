@@ -16,12 +16,17 @@ export default function AppGroupComponent({ buttonLook, groupTitle, content }: A
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <Button
-        className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] transparent-grey"
-        onClick={toggleBox}
-      >
-        <div className={buttonLook} />
-      </Button>
+      <div className="relative group">
+        <Button
+          className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] transparent-grey"
+          onClick={toggleBox}
+        >
+          <div className={buttonLook} />
+        </Button>
+        <div className="absolute bottom-[130%] left-1/2 transform -translate-x-1/2 w-40 transparent-grey text-white px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 text-center pointer-events-none">
+          <p className="font-semibold text-sm">{groupTitle}</p>
+        </div>
+      </div>
 
       <div
         className={`${
@@ -33,23 +38,22 @@ export default function AppGroupComponent({ buttonLook, groupTitle, content }: A
           transform: "translate(-50%, -50%)", 
         }}
       >
-      <div>
-        <h1 className="text-4xl font-bold mb-10 justify-center flex text-white">{groupTitle}</h1>
-          <div className="grid grid-cols-3 gap-x-15 gap-y-5  justify-start">
-          {Array.from(content).map(([key, value]) => (
-            <div key={key}>
-              <Button
-                className={`h-[120px] w-[120px] rounded-3xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] ${value[1]}`}
-              >
-                <div className={value[0]} />
-              </Button>
-              <p className="text-white text-center mt-2">{key}</p>
-            </div>
-          ))}
+        <div>
+          <h1 className="text-4xl font-bold mb-10 justify-center flex text-white">{groupTitle}</h1>
+          <div className="grid grid-cols-3 gap-x-15 gap-y-5 justify-start">
+            {Array.from(content).map(([key, value]) => (
+              <div key={key}>
+                <Button
+                  className={`h-[120px] w-[120px] rounded-3xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] ${value[1]}`}
+                >
+                  <div className={value[0]} />
+                </Button>
+                <p className="text-white text-center mt-2">{key}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
   );
 }
-

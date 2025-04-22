@@ -1,18 +1,8 @@
 'use client'
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { LazyAppProviders } from './../components/LazyAppProviders';
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 
 
 export default function RootLayout({
@@ -22,10 +12,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="antialiased">
+        <LazyAppProviders>
+          <main>{children}</main>
+        </LazyAppProviders>
       </body>
     </html>
   );
