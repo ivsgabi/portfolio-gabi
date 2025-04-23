@@ -1,8 +1,10 @@
+'use client'
 import { Button } from "./ui/button";
 import Link from "next/link";
 import AppGroupComponent from "./ApplicationGroup";
 import { WebToolsMap, DevOpsMap, OthersMap } from "@/app/data/app-groups-infos";
 import Divider from '@mui/material/Divider';
+import MailButton from "./MailButton";
 
 const skills = [
   { name: "C", iconClass: "C-icon-svg", bgColor: "bg-c-purple" },
@@ -27,7 +29,7 @@ export default function ApplicationBarComponent() {
             <Button className={`h-[85px] w-[85px] rounded-2xl transition-transform duration-300 hover:translate-y-[-10px] ${bgColor}`}>
               <div className={iconClass} />
             </Button>
-            <div className="absolute bottom-[130%] left-1/2 transform -translate-x-1/2 w-35 transparent-grey text-white px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 text-center">
+            <div className="absolute bottom-[130%] left-1/2 transform -translate-x-1/2 w-35 transparent-grey text-white px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
               <p className="font-semibold text-sm">{name}</p>
               <p className="text-sm text-gray-400">See some projects</p>
             </div>
@@ -49,32 +51,27 @@ export default function ApplicationBarComponent() {
         }}
       />
 
-      <div className="flex items-center mx-2">
-        <div className="relative group mx-1">
+      <div className="flex items-center">
+        <div className="relative group">
           <Button asChild className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] github-profile-icon-svg bg-black">
             <Link href="https://github.com/ivsgabi"/>
           </Button>
-          <div className="absolute bottom-[125%] left-1/2 transform -translate-x-1/2 w-35 transparent-grey text-white px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 text-center">
+          <div className="absolute bottom-[125%] left-1/2 transform -translate-x-1/2 w-35 transparent-grey text-white px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
             <p className="font-semibold text-sm">GitHub Profile</p>
           </div>
         </div>
         
-        <div className="relative group mx-1">
+        <div className="relative group">
           <Button asChild className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] linkedIn-blue linkedin-icon-svg">
             <Link href="https://www.linkedin.com/in/johana-gaba-54865926b/"/>
           </Button>
-          <div className="absolute bottom-[125%] left-1/2 transform -translate-x-1/2 w-35 transparent-grey text-white px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 text-center">
+          <div className="absolute bottom-[125%] left-1/2 transform -translate-x-1/2 w-35 transparent-grey text-white px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
             <p className="font-semibold text-sm">LinkedIn Profile</p>
           </div>
         </div>
-
-        <div className="relative group mx-1">
-          <div className="mail-icon-svg mr-1 transition-transform duration-300 hover:translate-y-[-10px]" />
-          <div className="absolute bottom-[125%] left-1/2 transform -translate-x-1/2 w-35 transparent-grey text-white px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 text-center">
-            <p className="font-semibold text-sm">Contact Me</p>
-          </div>
-        </div>
+        <MailButton buttonLook="mail-icon-svg mr-1 mt-[-5] transition-transform duration-300 hover:translate-y-[-10px]"/>
       </div>
+      
     </div>
   );
 }

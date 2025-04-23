@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { IoIosArrowBack } from "react-icons/io";
 import ImageViewer from '../ImageViewer';
 
 interface FolderWindowProps {
