@@ -69,7 +69,7 @@ export default function ExperienceFolder({ closeWindow }: FolderWindowProps) {
                 </div>
                 <div className="flex-cols h-30 w-30 cursor-pointer" onClick={() => setOpenFolder('projects')}>
                   <div className="pale-pink-folder-icon-pic mt-[-5]" />
-                  <span className="items-center justify-center ml-11 mt-[-10] flex text-center text-black text-sm">projects</span>
+                  <span className="items-center justify-center ml-11 mt-[-10] flex text-center text-black text-sm">favorites projects</span>
                 </div>
               </div>
             )}
@@ -78,11 +78,11 @@ export default function ExperienceFolder({ closeWindow }: FolderWindowProps) {
               <>
                 {renderBackArrow()}
                 <div className="flex space-x-3 mt-5 ml-5">
-                  <div onClick={() => openFile('/folder-content/XP/astek-tasks.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  <div onClick={() => openFile('/folder-content/XP/epitech/astek-tasks.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">astek-tasks.pdf</span>
                   </div>
-                  <div onClick={() => openFile('/folder-content/XP/astek-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  <div onClick={() => openFile('/folder-content/XP/epitech/astek-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">astek-stack.pdf</span>
                   </div>
@@ -94,11 +94,11 @@ export default function ExperienceFolder({ closeWindow }: FolderWindowProps) {
               <>
                 {renderBackArrow()}
                 <div className="flex space-x-3 mt-5 ml-5">
-                  <div onClick={() => openFile('/folder-content/XP/nricher-tasks.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  <div onClick={() => openFile('/folder-content/XP/nricher/nricher-tasks.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">nricher-tasks.pdf</span>
                   </div>
-                  <div onClick={() => openFile('/folder-content/XP/nricher-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  <div onClick={() => openFile('/folder-content/XP/nricher/nricher-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">nricher-stack.pdf</span>
                   </div>
@@ -111,21 +111,17 @@ export default function ExperienceFolder({ closeWindow }: FolderWindowProps) {
                 {renderBackArrow()}
                 <div className="flex space-x-3 mt-5 justify-center">
                 <div className={`${isEnlarge ? "grid grid-cols-10 gap-y-30 gap-x-15 mt-[-30]" : "grid grid-cols-6 gap-y-30 gap-x-15 mt-[-30]"}`}>
-                  <div onClick={() => openFile('/folder-content/XP/project-x-description.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  <div onClick={() => openFile('/folder-content/XP/projects/BSQ-sheet.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-BSQ.pdf</span>
                   </div>
-                  <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
-                    <div className="pink-file-icon-pic mt-[-20]" />
-                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-my_printf.pdf</span>
-                  </div>
-                  <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  <div onClick={() => openFile('/folder-content/XP/projects/minishell-sheet.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-minishell</span>
                   </div>
-                  <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  <div onClick={() => openFile('/folder-content/XP/projects/coming.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
-                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-MyFTP.pdf</span>
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-my_printf.pdf</span>
                   </div>
                   <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
