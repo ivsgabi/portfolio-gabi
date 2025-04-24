@@ -12,6 +12,8 @@ export default function CVFolder({ closeWindow }: FolderWindowProps) {
   const [isEnlarge, setIsEnlarge] = useState(false);
   const [isCVOpen, setIsCVOpen] = useState(false);
   const [pdfUrl, setPdfUrl] = useState<string | null>(null);
+  const [filename, setFilename] = useState<string>("");
+
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100);
@@ -21,9 +23,10 @@ export default function CVFolder({ closeWindow }: FolderWindowProps) {
     setIsEnlarge(!isEnlarge);
   };
 
-  const openCV = (fileUrl: string) => {
+  const openCV = (fileUrl: string, filename: string) => {
     setPdfUrl(fileUrl);
     setIsCVOpen(true);
+    setFilename(filename)
   };
 
   return (
@@ -42,11 +45,11 @@ export default function CVFolder({ closeWindow }: FolderWindowProps) {
         <div
           className={`relative ${
             isEnlarge ? 'w-full h-full' : 'w-full h-[62vh]'
-          } bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
+          } bg-page-grey rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
             isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
           }`}
         >
-          <div className="h-12 bg-gradient-to-r from-gray-300 to-gray-100 flex items-center px-4 text-lg font-semibold text-gray-800">
+          <div className="h-12 bg-gradient-to-r transparent-grey flex items-center px-4 text-lg font-semibold text-white">
             <div className="flex space-x-2">
               <div
                 className="w-3.5 h-3.5 rounded-full bg-red-500 cursor-pointer"
@@ -63,19 +66,19 @@ export default function CVFolder({ closeWindow }: FolderWindowProps) {
 
           <div className="p-4 space-y-4 overflow-auto h-full">
             <div className="flex space-x-3 mx-5">
-              <a onClick={() => openCV("/folder-content/CV/CV-portfolio-FR-GABA.pdf")}>
+              <a onClick={() => openCV("/folder-content/CV/CV-portfolio-FR-GABA.pdf", "CV-Johana-GABA-FR-2025")}>
                 <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                   <div className="pink-file-icon-pic mt-[-20]" />
-                  <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                  <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-white text-sm">
                     CV-Johana-GABA-FR-2025.pdf
                   </span>
                 </div>
               </a>
 
-              <a onClick={() => openCV("/folder-content/CV/CV-portfolio-EN-GABA.pdf")}>
+              <a onClick={() => openCV("/folder-content/CV/CV-portfolio-EN-GABA.pdf", "CV-Johana-GABA-EN-2025")}>
                 <div className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                   <div className="pink-file-icon-pic mt-[-20]" />
-                  <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                  <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-white text-sm">
                     CV-Johana-GABA-EN-2025.pdf
                   </span>
                 </div>
@@ -86,7 +89,7 @@ export default function CVFolder({ closeWindow }: FolderWindowProps) {
       </div>
 
       {isCVOpen && pdfUrl && (
-        <PDFViewer fileUrl={pdfUrl} onClose={() => setIsCVOpen(false)} />
+        <PDFViewer fileUrl={pdfUrl} onClose={() => setIsCVOpen(false)} filename={filename} />
       )}
     </>
   );

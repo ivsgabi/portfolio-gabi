@@ -64,11 +64,11 @@ export default function JohanaFolder({ closeWindow }: FolderWindowProps) {
         <div
           className={`relative ${
             isEnlarge ? 'w-full h-full' : 'w-full h-[62vh]'
-          } bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
+          } bg-page-grey rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
             isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
           }`}
         >
-          <div className="h-12 bg-gradient-to-r from-gray-300 to-gray-100 flex items-center px-4 text-lg font-semibold text-gray-800">
+          <div className="h-12 bg-gradient-to-r transparent-grey flex items-center px-4 text-lg font-semibold text-white">
             <div className="flex space-x-2">
               <div
                 className="w-3.5 h-3.5 rounded-full bg-red-500 cursor-pointer"
@@ -92,7 +92,7 @@ export default function JohanaFolder({ closeWindow }: FolderWindowProps) {
                   onClick={() => openImageViewer(index)}
                 >
                   <div className="pink-file-icon-pic mt-[-20]" />
-                  <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">
+                  <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-white text-sm">
                     {src.split('/').pop()}
                   </span>
                 </div>

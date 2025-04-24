@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import Divider from '@mui/material/Divider';
 import { VscSend } from "react-icons/vsc";
+import FeedbackWidget from "./FeedbackWidget";
 
 interface AppGroupConfig {
   buttonLook: string;
@@ -16,7 +17,8 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
   const [sent, setSent] = useState(false);
   const [showNotification, setShowNotification] = useState(true);
   const [notification, setNotification] = useState<{ message: string, type: 'success' | 'error' } | null>(null);
-  
+  const [feedbackDone, setFeedbackDone] = useState(false);
+
   useEffect(() => {
     if (notification) {
       const timer = setTimeout(() => {
@@ -43,9 +45,15 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
     setIsEnlarge(!isEnlarge);
   };
 
+  const handleFeedback = () => {
+    setFeedbackDone(true);
+
+  };
+
   const openWindow = () => {
     setIsOpen(!isOpen);
     setShowNotification(false);
+    setForm({subject: '', name: '', email: '', message: ''});
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -62,7 +70,7 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
     }
   
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('/api/mail', {
         method: 'POST',
         body: JSON.stringify(form),
         headers: {
@@ -73,7 +81,7 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
       if (res.ok) {
         setSent(true);
         setNotification({ message: "Message sent successfully.", type: "success" });
-        setForm({ subject: '', name: '', email: '', message: '' });
+        setForm({subject: '', name: '', email: '', message: ''});
       } else {
         setNotification({ message: "Something went wrong. Please try again.", type: "error" });
       }
@@ -123,11 +131,11 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
           <div
             className={`relative ${
               isEnlarge ? 'w-full h-full' : 'w-full h-[62vh]'
-            } bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
+            } bg-page-grey rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
               isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
             }`}
           >
-            <div className="h-12 bg-gradient-to-r from-gray-300 to-gray-100 flex items-center justify-between px-4 text-lg font-semibold text-gray-800">
+            <div className="h-12 bg-gradient-to-r transparent-grey flex items-center justify-between px-4 text-lg font-semibold text-white">
               <div className="flex space-x-2">
                 <div
                   className="w-3.5 h-3.5 rounded-full bg-red-500 cursor-pointer"
@@ -139,15 +147,21 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
                   onClick={enlargeWindow}
                 />
               </div>
-              <div className="ml-[-50] text-center w-full">Contact me</div>
+              <div className="text-center w-full">Contact me</div>
             </div>
+
+            {isOpen && !feedbackDone && (
+              <div className="fixed inset-0 z-[9999] flex justify-center items-center bg-black/40 backdrop-blur-sm">
+                <FeedbackWidget onSubmit={handleFeedback} />
+              </div>
+            )}
 
             <main className="p-5">
               <div className="mb-3 flex items-center">
                 <span className="text-[18px] text-gray-400">To:</span>
-                <span className="ml-3 text-[18px] text-gray-400 rounded-2xl border border-gray-300 p-2 bg-gray-100">Johana GABA</span>
+                <span className="ml-3  text-[18px] text-gray-200 rounded-2xl border border-gray-600 p-2 bg-gray-500">Johana GABA</span>
               </div>
-              <Divider sx={{ marginBottom: '10px', borderWidth: 0.2, borderColor: '#e0e0e0' }} />
+              <Divider sx={{ marginBottom: '10px', borderWidth: 0.5 }} />
 
               <div className="mb-2 flex items-center">
                 <span className="text-[18px] text-gray-400">Subject:</span>
@@ -156,11 +170,11 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
                   placeholder="Subject"
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                  className="ml-3 text-[18px] bg-transparent border-none focus:ring-0 outline-none placeholder-gray-300"
+                  className="ml-3 text-white text-[18px] bg-transparent border-none focus:ring-0 outline-none"
                   required
                 />
               </div>
-              <Divider sx={{ marginBottom: '10px', borderWidth: 0.5, borderColor: '#e0e0e0' }} />
+              <Divider sx={{ marginBottom: '10px', borderWidth: 0.5 }} />
 
               <div className="mb-2 flex items-center">
                 <span className="text-[18px] text-gray-400">Name:</span>
@@ -169,11 +183,11 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
                   placeholder="Your name"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="ml-3 text-[18px] bg-transparent border-none focus:ring-0 outline-none placeholder-gray-300"
+                  className="ml-3 text-white text-[18px] bg-transparent border-none focus:ring-0 outline-none"
                   required
                 />
               </div>
-              <Divider sx={{ marginBottom: '10px', borderWidth: 0.5, borderColor: '#e0e0e0' }} />
+              <Divider sx={{ marginBottom: '10px', borderWidth: 0.5 }} />
 
               <div className="mb-2 flex items-center">
                 <span className="text-[18px] text-gray-400">From:</span>
@@ -182,11 +196,11 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
                   placeholder="Your email address"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="ml-3 text-[18px] bg-transparent border-none focus:ring-0 outline-none placeholder-gray-300"
+                  className="ml-3 text-white text-[18px] bg-transparent border-none focus:ring-0 outline-none"
                   required
                 />
               </div>
-              <Divider sx={{ marginBottom: '10px', borderWidth: 0.5, borderColor: '#e0e0e0' }} />
+              <Divider sx={{ marginBottom: '10px', borderWidth: 0.5 }} />
 
               <div className="mb-4 flex items-center">
                 <span className="text-[18px] text-gray-400"></span>
@@ -194,8 +208,8 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
                   placeholder="Your message"
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className={`text-[18px] bg-transparent border-none focus:ring-0 outline-none ${
-                    isEnlarge ? 'h-160' : 'h-65' } w-full placeholder-gray-300`}
+                  className={`text-[18px] text-white bg-transparent border-none focus:ring-0 outline-none ${
+                    isEnlarge ? 'h-160' : 'h-65' } w-full`}
                   required
                 />
               </div>
@@ -203,7 +217,7 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
               <div className="flex justify-end mr-5">
                 <button
                   type="submit"
-                  className=" bg-gray-200 text-gray-500 py-2 rounded-lg h-15 w-18 hover:bg-gray-300 transition duration-300 border-[2] flex items-center justify-center mb-4"
+                  className="transparent-grey border-gray-600 text-gray-400 py-2 rounded-lg h-15 w-18 hover:translate-y-[5px] transition duration-300 shadow-lg flex items-center justify-center mb-4"
                   onClick={handleSubmit}
                 >
                   <VscSend size={40} />
@@ -213,7 +227,7 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
                 <div className={`rounded-lg shadow-lg z-[9999] text-center justify-center transition-all duration-300 ease-out transform
                   ${notification.type === 'success' ? 'bg-green-200 border-2 border-green-900' : 'bg-red-200 border-2 border-red-800'}`}>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="px-5 py-2 text-[18px] text-center flex w-full justify-center text-black">{notification.message}</span>
+                    <span className="px-5 py-2 text-[18px] text-center flex w-full items-center justify-center text-black">{notification.message}</span>
                   </div>
                 </div>
               )}

@@ -16,7 +16,7 @@ export default function MusicWidget() {
   }, []);
 
   return (
-    <div className="mt-5 h-[40vh] w-[30vw] flex flex-col justify-center items-center rounded-4xl text-white bg-gray-700 p-4">
+    <div className="mt-5 h-[40vh] w-[30vw] flex flex-col justify-center items-center rounded-4xl text-white bg-page-grey p-4">
         <div className='absolute justify-center items-center flex'>
           music widget
         </div>
