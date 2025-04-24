@@ -12,14 +12,32 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isEnlarge, setIsEnlarge] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ subject: '', name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
   const [showNotification, setShowNotification] = useState(true);
+  const [notification, setNotification] = useState<{ message: string, type: 'success' | 'error' } | null>(null);
   
+  useEffect(() => {
+    if (notification) {
+      const timer = setTimeout(() => {
+        setNotification(null);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [notification]);
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100);
   }, []);
+
+  useEffect(() => {
+    if (notification) {
+      const timer = setTimeout(() => {
+        setNotification(null);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [notification]);
 
   const enlargeWindow = () => {
     setIsEnlarge(!isEnlarge);
@@ -32,15 +50,35 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      body: JSON.stringify(form),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (res.ok) setSent(true);
+  
+    if (!form.subject || !form.name || !form.email || !form.message) {
+      setNotification({ message: "Please fill in all the fields.", type: "error" });
+      return;
+    }
+  
+    if (!form.email.includes('@') || !form.email.includes('.')) {
+      setNotification({ message: "Please correctly fill the email field.", type: "error" });
+      return;
+    }
+  
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(form),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (res.ok) {
+        setSent(true);
+        setNotification({ message: "Message sent successfully.", type: "success" });
+      } else {
+        setNotification({ message: "Something went wrong. Please try again.", type: "error" });
+      }
+    } catch (err) {
+      setNotification({ message: "Network error. Please try again.", type: "error" });
+    }
   };
 
   return (
@@ -115,7 +153,8 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
                 <input
                   type="text"
                   placeholder="Subject"
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  value={form.subject}
+                  onChange={(e) => setForm({ ...form, subject: e.target.value })}
                   className="ml-3 text-[18px] bg-transparent border-none focus:ring-0 outline-none placeholder-gray-300"
                   required
                 />
@@ -155,7 +194,7 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   className={`text-[18px] bg-transparent border-none focus:ring-0 outline-none ${
-                    isEnlarge ? 'h-160' : 'h-70' } w-full placeholder-gray-300`}
+                    isEnlarge ? 'h-160' : 'h-65' } w-full placeholder-gray-300`}
                   required
                 />
               </div>
@@ -163,12 +202,20 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
               <div className="flex justify-end mr-5">
                 <button
                   type="submit"
-                  className=" bg-gray-200 text-gray-500 py-2 rounded-lg h-15 w-18 hover:bg-gray-300 transition duration-300 border-[2] flex items-center justify-center"
+                  className=" bg-gray-200 text-gray-500 py-2 rounded-lg h-15 w-18 hover:bg-gray-300 transition duration-300 border-[2] flex items-center justify-center mb-4"
                   onClick={handleSubmit}
                 >
                   <VscSend size={40} />
                 </button>
               </div>
+              {notification && (
+                <div className={`rounded-lg shadow-lg z-[9999] text-center justify-center transition-all duration-300 ease-out transform
+                  ${notification.type === 'success' ? 'bg-green-200 border-2 border-green-900' : 'bg-red-200 border-2 border-red-800'}`}>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="px-5 py-2 text-[18px] text-center flex w-full justify-center text-black">{notification.message}</span>
+                  </div>
+                </div>
+              )}
             </main>
           </div>
         </div>

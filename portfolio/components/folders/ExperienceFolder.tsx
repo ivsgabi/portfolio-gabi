@@ -111,35 +111,35 @@ export default function ExperienceFolder({ closeWindow }: FolderWindowProps) {
                 {renderBackArrow()}
                 <div className="flex space-x-3 mt-5 justify-center">
                 <div className={`${isEnlarge ? "grid grid-cols-10 gap-y-30 gap-x-15 mt-[-30]" : "grid grid-cols-6 gap-y-30 gap-x-15 mt-[-30]"}`}>
-                  <div onClick={() => openFile('/folder-content/XP/projects/BSQ-sheet.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  <div onClick={() => openFile('/folder-content/XP/projects/bsq-sheet.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-BSQ.pdf</span>
                   </div>
-                  <div onClick={() => openFile('/folder-content/XP/projects/minishell-sheet.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
-                    <div className="pink-file-icon-pic mt-[-20]" />
-                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-minishell</span>
-                  </div>
-                  <div onClick={() => openFile('/folder-content/XP/projects/coming.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  {/* <div onClick={() => openFile('/folder-content/XP/projects/coming.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-my_printf.pdf</span>
+                  </div> */}
+                  <div onClick={() => openFile('/folder-content/XP/projects/minishell-sheet.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                    <div className="pink-file-icon-pic mt-[-20]" />
+                    <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-minishell.pdf</span>
                   </div>
-                  <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  {/* <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C-my_paint.pdf</span>
-                  </div>
-                  <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  </div> */}
+                  {/* <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">Haskell-ImageCompressor.pdf</span>
-                  </div>
-                  <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  </div> */}
+                  <div onClick={() => openFile('/folder-content/XP/projects/raytracer-sheet.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C++-RayTracer.pdf</span>
                   </div>
-                  <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  {/* <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">Web-AREA.pdf</span>
-                  </div>
-                  <div onClick={() => openFile('/folder-content/XP/project-x-stack.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  </div> */}
+                  <div onClick={() => openFile('/folder-content/XP/projects/rtype-sheet.pdf')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-black text-sm">C++-RType.pdf</span>
                   </div>
