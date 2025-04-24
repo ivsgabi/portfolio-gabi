@@ -73,6 +73,7 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
       if (res.ok) {
         setSent(true);
         setNotification({ message: "Message sent successfully.", type: "success" });
+        setForm({ subject: '', name: '', email: '', message: '' });
       } else {
         setNotification({ message: "Something went wrong. Please try again.", type: "error" });
       }
@@ -98,7 +99,7 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
         </div>
         
         <div className="absolute bottom-[130%] left-1/2 transform -translate-x-1/2 w-40 transparent-grey text-white px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 text-center pointer-events-none">
-          <p className="font-semibold text-sm">Contact Me</p>
+          <p className="font-semibold text-sm">Contact me</p>
         </div>
       </div>
 
@@ -138,7 +139,7 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
                   onClick={enlargeWindow}
                 />
               </div>
-              <div className="text-center w-full">Contact Me</div>
+              <div className="ml-[-50] text-center w-full">Contact me</div>
             </div>
 
             <main className="p-5">
