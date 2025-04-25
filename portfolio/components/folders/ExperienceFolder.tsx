@@ -134,7 +134,7 @@ export default function ExperienceFolder({ closeWindow }: FolderWindowProps) {
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-white text-sm">C++-RayTracer.pdf</span>
                   </div>
-                  <div onClick={() => openFile('/folder-content/XP/area-sheet.pdf', 'Web-AREA')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
+                  <div onClick={() => openFile('/folder-content/XP/projects/area-sheet.pdf', 'Web-AREA')} className="flex-cols h-20 w-30 cursor-pointer hover:opacity-70 transition-opacity duration-200">
                     <div className="pink-file-icon-pic mt-[-20]" />
                     <span className="items-center justify-center ml-[-10] mt-[-30] flex text-center text-white text-sm">Web-AREA.pdf</span>
                   </div>
