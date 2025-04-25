@@ -1,25 +1,29 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { Resend } from 'resend';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { rating, message } = req.body;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: "noreply@votreapp.com",
-      to: "votreadresse@mail.com",
-      subject: "Nouveau Feedback",
-      html: `<p>Note : ${rating}/5</p><p>Message : ${message || "Aucun message."}</p>`,
-    }),
-  });
+export async function POST(req: Request) {
+  console.log("request received");
 
-  if (response.ok) {
-    return res.status(200).json({ success: true });
-  } else {
-    return res.status(500).json({ error: "Erreur d'envoi avec Resend" });
+  try {
+    const body = await req.json();
+    //console.log("body JSON :", body);
+
+    const { rating, message } = body;
+
+    const data = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: 'gabajohana77@gmail.com',
+      subject: `New portfolio rating`,
+      replyTo: `unknown@noreply.com`,
+      html: `<p><strong>Reting:</strong> ${rating}</p>
+             <p><strong>Message:</strong> ${message}</p>`,
+    });
+
+    //console.log("email succesfully sent :", data);
+    return new Response(JSON.stringify({ success: true, data }), { status: 200 });
+  } catch (error) {
+    //console.error("error mail sending failure :", error);
+    return new Response(JSON.stringify({ error: "Error: Mail sending failure." }), { status: 500 });
   }
 }

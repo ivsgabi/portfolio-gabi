@@ -144,6 +144,10 @@
   background-color: #1E1E1E;
 }
 
+.bg-page-grey-transparent {
+  background-color: rgba(30, 30, 30, 0.95);
+}
+
 .bg-divider-grey {
   background-color: #121212;
 }

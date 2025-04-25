@@ -1,18 +1,42 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 import { Button } from "./ui/button";
 
 interface AppGroupConfig {
-  buttonLook: string,
-  groupTitle: string,
-  content: Map<string, Array<string>>,
+  id: string;
+  buttonLook: string;
+  groupTitle: string;
+  content: Map<string, Array<string>>;
+  isOpen: boolean;
+  setActiveGroup: (id: string | null) => void;
 }
 
-export default function AppGroupComponent({ buttonLook, groupTitle, content }: AppGroupConfig) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function AppGroupComponent({
+  id,
+  buttonLook,
+  groupTitle,
+  content,
+  isOpen,
+  setActiveGroup,
+}: AppGroupConfig) {
+  const boxRef = useRef<HTMLDivElement>(null);
+
   const toggleBox = () => {
-    setIsOpen(!isOpen);
+    setActiveGroup(isOpen ? null : id);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen && boxRef.current && !boxRef.current.contains(event.target as Node)) {
+        setActiveGroup(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, setActiveGroup]);
 
   return (
     <div className="flex justify-center items-center h-screen">
@@ -29,26 +53,27 @@ export default function AppGroupComponent({ buttonLook, groupTitle, content }: A
       </div>
 
       <div
+        ref={boxRef}
         className={`${
           isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"
-        } transition-all duration-500 ease-out w-[47%] h-[65vh] transparent-grey rounded-[60px] absolute flex justify-center items-center`}
+        } transition-all duration-500 ease-out w-[46%] h-[68vh] transparent-grey rounded-[60px] absolute flex justify-center items-center`}
         style={{
           top: isOpen ? "-360%" : "0",
-          left: "50%", 
-          transform: "translate(-50%, -50%)", 
+          left: "50%",
+          transform: "translate(-50%, -50%)",
         }}
       >
         <div>
-          <h1 className="text-4xl font-bold mb-10 justify-center flex text-white">{groupTitle}</h1>
-          <div className="grid grid-cols-3 gap-x-15 gap-y-5 justify-start">
+          <h1 className="text-4xl font-bold mx-10 mb-12 justify-center flex text-white">{groupTitle}</h1>
+          <div className={`grid grid-cols-3 ${id == "webtools" ? 'gap-x-14' : ''}  ${id == "devops" ? 'mt-[-10]' : ''}  ${id == "others" ? 'mt-[-10] gap-x-10' : ''} gap-y-6 justify-center items-center mb-5`}>
             {Array.from(content).map(([key, value]) => (
-              <div key={key}>
+              <div key={key} className="flex flex-col items-center justify-center text-center">
                 <Button
-                  className={`h-[120px] w-[120px] rounded-3xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] ${value[1]}`}
+                  className={`h-[120px] w-[120px] rounded-3xl transition-transform duration-300 hover:translate-y-[-10px] ${value[1]}`}
                 >
                   <div className={value[0]} />
                 </Button>
-                <p className="text-white text-center mt-2">{key}</p>
+                <p className="text-white mt-4 text-[20px] opacity-80">{key}</p>
               </div>
             ))}
           </div>
