@@ -13,7 +13,6 @@ export default function JohanaFolder({ closeWindow }: FolderWindowProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    './folder-content/pictures/IMG_1681.JPEG',
     './folder-content/pictures/IMG_0238.JPEG',
     './folder-content/pictures/IMG_0310.JPEG',
     './folder-content/pictures/IMG_0476.JPEG',
@@ -33,6 +32,7 @@ export default function JohanaFolder({ closeWindow }: FolderWindowProps) {
     './folder-content/pictures/IMG_6116.JPEG',
     './folder-content/pictures/IMG_7117.JPEG',
     './folder-content/pictures/IMG_9122.JPEG',
+    './folder-content/pictures/IMG_1681.JPEG',
   ];
 
   useEffect(() => {

@@ -282,15 +282,6 @@
   transform: translate(-50%, -50%) scale(0.8); 
 }
 
-.JG-icon-gray-svg {
-  background-image: url("/JG-gray.svg"); 
-  background-size: contain;
-  background-position: center; 
-  background-repeat: no-repeat;
-  width: 45;
-  height: 45;
-}
-
 .C-icon-svg {
   background-image: url("/skills-icons/c-program-icon.svg"); 
   background-size: cover;
@@ -667,6 +658,15 @@
   background-repeat: no-repeat;
   width: 200; 
   height: 200;
+}
+
+.memoji-pic {
+  background-image: url("/memoji/memoji-walcome-pic.png"); 
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
 }
 
 

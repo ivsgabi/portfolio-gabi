@@ -1,0 +1,55 @@
+'use client'
+
+import { useState, useEffect } from "react";
+
+export default function HelpModal() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+   useEffect(() => {
+      setTimeout(() => setIsVisible(true), 100);
+    }, []);
+
+  const toggleBox = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <>
+      <h2 className="ml-5 text-sm cursor-pointer" onClick={toggleBox}>
+        Help
+      </h2>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 flex justify-center items-center z-50"
+          onClick={toggleBox}
+        >
+          <div
+        className={`justify-center w-[30%] h-[28%]  bg-page-grey rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
+          isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+        }`}
+      >
+        <div className="h-12 bg-gradient-to-r transparent-grey flex items-center px-4 text-lg font-semibold text-white">
+          <div className="flex space-x-2">
+            <div
+              className="w-3.5 h-3.5 rounded-full bg-red-500 cursor-pointer"
+              onClick={toggleBox}
+            />
+           
+          </div>
+          <div className="text-center w-full">Help</div>
+        </div>
+        <div className="mt-5 mb-5 mx-10">
+        <p className="text-center text-white text-xl font-bold mb-3">Welcome to Johana Gaba's Portfolio Website.</p>
+        <p className="text-center text-white text-base">This project offers you an immersion into my desktop environment, giving you a few hints about my personality and skills.</p>
+        <p className="text-center text-white text-base">Feel free to explore the folders!</p>
+        <p className="text-center text-white text-base">You can also send me feedback or get in touch using the mail application available here.</p>
+        <p className="text-center text-white text-base">I hope you'll enjoy your visit!</p>
+        </div>    
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
