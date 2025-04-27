@@ -137,15 +137,9 @@ export default function MailButton({ buttonLook }: AppGroupConfig) {
           >
             <div className="h-12 bg-gradient-to-r transparent-grey flex items-center justify-between px-4 text-lg font-semibold text-white">
               <div className="flex space-x-2">
-                <div
-                  className="w-3.5 h-3.5 rounded-full bg-red-500 cursor-pointer"
-                  onClick={openWindow}
-                />
-                <div className="w-4 h-4 rounded-full bg-yellow-500" />
-                <button
-                  className="w-4 h-4 rounded-full bg-green-500 cursor-pointer"
-                  onClick={enlargeWindow}
-                />
+              <div className="w-3.5 h-3.5 rounded-full bg-red-500 cursor-pointer" onClick={openWindow}/>
+              <div className="w-4 h-4 rounded-full bg-yellow-500 cursor-pointer"  onClick={openWindow} />
+              <div className="w-4 h-4 rounded-full bg-green-500 cursor-pointer" onClick={enlargeWindow} />
               </div>
               <div className="text-center w-full">Contact me</div>
             </div>

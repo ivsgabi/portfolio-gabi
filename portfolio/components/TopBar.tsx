@@ -7,9 +7,8 @@ export default function TopBarComponent() {
     return (
       <div className="justify-top h-12 w-screen transparent-grey flex text-white">
         <div className="ml-7 mb-1 mt-[15px] flex">
-          <h1 className="mt-[-5px]  w-7 h-7 rounded-full bg-white memoji-pic"/>
-          {/* <h2 className="ml-5 text-sm">Help</h2> */}
-          <HelpModal ></HelpModal>
+          <h1 className="mt-[-9px] w-5 h-5 rounded-full bg-pink-200 memoji-pic"/> 
+          <HelpModal />
         </div>
         <div className="ml-7 mr-7 mt-[15px] mb-4 flex w-full justify-end">
           <h1>  

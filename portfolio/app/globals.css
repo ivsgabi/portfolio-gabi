@@ -661,12 +661,12 @@
 }
 
 .memoji-pic {
-  background-image: url("/memoji/memoji-walcome-pic.png"); 
+  background-image: url("/memoji/memoji-bar-icon.png"); 
   background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
 }
 
 

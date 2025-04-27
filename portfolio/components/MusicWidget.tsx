@@ -83,10 +83,6 @@ const songs: Song[] = [
     cover: "/album-covers/danza-cover.jpg",
   },
 
-
-
- 
-
 ];
 
 export default function MusicWidget() {
@@ -145,7 +141,7 @@ export default function MusicWidget() {
           <div className="flex gap-4 mt-4 items-center">
             <button
               onClick={goToPrevious}
-              className="hover:bg-neutral-600 transition p-3 rounded-lg text-white z-[1000]"
+              className="hover:bg-neutral-600 transition p-3 rounded-lg text-white z-[20]"
               aria-label="Previous"
             >
               <IoPlayBack size={24} />
@@ -153,7 +149,7 @@ export default function MusicWidget() {
 
             <button
               onClick={togglePlay}
-              className=" hover:bg-neutral-600 transition p-4 rounded-lg text-white z-[1000]"
+              className=" hover:bg-neutral-600 transition p-4 rounded-lg text-white z-[20]"
               aria-label="Play/Pause"
             >
               {isPlaying ? <IoPause size={36} /> : <IoPlay size={36} />}
@@ -161,7 +157,7 @@ export default function MusicWidget() {
 
             <button
               onClick={goToNext}
-              className="hover:bg-neutral-600 transition p-3 rounded-lg text-white z-[1000]"
+              className="hover:bg-neutral-600 transition p-3 rounded-lg text-white z-[20]"
               aria-label="Next"
             >
               <IoPlayForward size={24} />
