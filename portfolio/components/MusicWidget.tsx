@@ -71,8 +71,8 @@ const songs: Song[] = [
     cover: "/album-covers/baby-by-me-cover.jpg",
   },
   {
-    title: "pick up the phone",
-    artist: "Young Thug & Travis Scott 🅴",
+    title: "pick up the phone 🅴",
+    artist: "Young Thug & Travis Scott",
     src: "/music/PUTP.mp3",
     cover: "/album-covers/travis-cover.jpg",
   },
