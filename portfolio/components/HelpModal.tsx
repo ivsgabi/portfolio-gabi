@@ -36,7 +36,7 @@ export default function HelpModal() {
             <div className="h-12 bg-gradient-to-r transparent-grey flex items-center px-4 text-lg font-semibold text-white">
               <div className="flex space-x-2">
                 <div
-                  className="w-3.5 h-3.5 rounded-full bg-red-500 cursor-pointer"
+                  className="w-4 h-4 rounded-full bg-red-500 cursor-pointer"
                   onClick={toggleBox}
                 />
               </div>
