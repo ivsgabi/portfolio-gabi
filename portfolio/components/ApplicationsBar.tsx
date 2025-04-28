@@ -28,7 +28,7 @@ export default function ApplicationBarComponent() {
     <>
     {activeGroup && (
         <div
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm h-screen w-screen "
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm h-screen w-screen"
           onClick={() => setActiveGroup(null)}
         />
       )}

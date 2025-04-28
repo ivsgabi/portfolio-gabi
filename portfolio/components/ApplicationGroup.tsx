@@ -42,7 +42,7 @@ export default function AppGroupComponent({
     <div className="flex justify-center items-center h-screen">
       <div className="relative group">
         <Button
-          className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] transparent-grey"
+          className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] transparent-grey z-[10]"
           onClick={toggleBox}
         >
           <div className={buttonLook} />
