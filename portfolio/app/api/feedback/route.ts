@@ -12,12 +12,12 @@ export async function POST(req: Request) {
     const { rating, message } = body;
 
     const data = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
+      from: 'Portfolio Rating <onboarding@resend.dev>',
       to: 'gabajohana77@gmail.com',
       subject: `New portfolio rating`,
       replyTo: `unknown@noreply.com`,
-      html: `<p><strong>Reting:</strong> ${rating}</p>
-             <p><strong>Message:</strong> ${message}</p>`,
+      html: `<p><strong>Rating:</strong> ${rating}</p>
+             <p><strong>Message:</strong> ${message ? message : "[Empty  message]"}</p>`,
     });
 
     //console.log("email succesfully sent :", data);
