@@ -1,7 +1,6 @@
 'use client'
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { LazyAppProviders } from './../components/LazyAppProviders';
+import ScreenResolutionWarning from '@/components/ScreenResolutionWarning';
 import "./globals.css";
 
 
@@ -13,6 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <ScreenResolutionWarning/>
         <LazyAppProviders>
           <main>{children}</main>
         </LazyAppProviders>
