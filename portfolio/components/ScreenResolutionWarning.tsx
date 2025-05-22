@@ -7,16 +7,6 @@ export default function ScreenResolutionWarning() {
   const [isOpen, setIsOpen] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
 
-  const toggleBox = () => {
-    if (!isOpen) {
-      setIsOpen(true);
-      setTimeout(() => setIsVisible(true), 50);
-    } else {
-      setIsVisible(false);
-      setTimeout(() => setIsOpen(false), 300);
-    }
-  };
-
   useEffect(() => {
     const checkResolution = () => {
       const isSmallScreen = window.innerWidth < 1700 || window.innerHeight < 895;
@@ -36,7 +26,6 @@ export default function ScreenResolutionWarning() {
       {isOpen && (
         <div
           className="fixed inset-0 flex justify-center items-center z-50 bg-black/40 backdrop-blur-2xl"
-          onClick={toggleBox}
         >
           <div
             className={`relative w-[500px] bg-page-grey rounded-lg shadow-2xl transition-all duration-300 ease-out transform ${
@@ -55,6 +44,7 @@ export default function ScreenResolutionWarning() {
             <div className="p-6 text-white text-center">
             <p>Unfortunately, the completely responsive version of the website is still in development.</p>
             <p>This site is best viewed on a screen resolution of at least 1700 x 895 for now. </p>
+            <p className="text-white text-sm text-center">Please resize your screen if possible.</p>
             </div>
           </div>
         </div>
