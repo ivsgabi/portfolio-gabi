@@ -32,9 +32,9 @@ export default function ApplicationBarComponent() {
         />
       )}
     
-    <div className="fixed bottom-3 left-1/2 transform -translate-x-1/2 w-[85%] h-30 transparent-grey flex items-center justify-center rounded-4xl shadow-lg text-black">
+    <div className="fixed bottom-3 left-1/2 transform -translate-x-1/2  h-30 transparent-grey flex items-center justify-center rounded-4xl shadow-lg text-black">
       
-      <div className="flex items-center">
+      <div className="ml-7 flex items-center">
         {skills.map(({ name, iconClass, bgColor }) => (
           <div key={name} className="relative group mx-1">
             <Button className={`h-[85px] w-[85px] rounded-2xl transition-transform duration-300 hover:translate-y-[-10px] ${bgColor}`}>
@@ -65,7 +65,7 @@ export default function ApplicationBarComponent() {
         }}
       />
 
-      <div className="flex items-center">
+      <div className="flex items-center mr-7">
         <div className="relative group">
           <Button asChild className="h-[85px] w-[85px] rounded-2xl ml-1 mr-1 transition-transform duration-300 hover:translate-y-[-10px] github-profile-icon-svg bg-black">
             <Link href="https://github.com/ivsgabi" target="_blank" rel="noopener noreferrer" />

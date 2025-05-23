@@ -9,7 +9,7 @@ export default function ScreenResolutionWarning() {
 
   useEffect(() => {
     const checkResolution = () => {
-      const isSmallScreen = window.innerWidth < 1400 || window.innerHeight < 800; // 1700 - 895
+      const isSmallScreen = window.innerWidth < 1400 || window.innerHeight < 820; // 1700 - 895
       setShowWarning(isSmallScreen);
     };
 
@@ -43,7 +43,7 @@ export default function ScreenResolutionWarning() {
 
             <div className="p-6 text-white text-center">
             <p>Unfortunately, the completely responsive version of the website is still in development.</p>
-            <p>This site is best viewed on a screen resolution of at least 1400 x 800 for now. </p>
+            <p>This site is best viewed on a screen resolution of at least 1700 x 800 for now but 1400 is ok even though some things are misplaced. </p>
             <p className="text-white text-sm text-center">Please resize your screen if possible.</p>
             </div>
           </div>

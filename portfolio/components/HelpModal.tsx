@@ -28,7 +28,7 @@ export default function HelpModal() {
           onClick={toggleBox}
         >
           <div
-            className={`justify-center w-[30%] h-[30%] bg-page-grey rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
+            className={`justify-center w-[25%] bg-page-grey rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-out transform ${
               isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
             }`}
             onClick={(e) => e.stopPropagation()} 
