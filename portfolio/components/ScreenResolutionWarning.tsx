@@ -9,7 +9,7 @@ export default function ScreenResolutionWarning() {
 
   useEffect(() => {
     const checkResolution = () => {
-      const isSmallScreen = window.innerWidth < 1320 || window.innerHeight < 720;
+      const isSmallScreen = window.innerWidth < 1400 || window.innerHeight < 800; // 1700 - 895
       setShowWarning(isSmallScreen);
     };
 
