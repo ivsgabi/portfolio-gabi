@@ -15,7 +15,6 @@ const skills = [
   { name: "Go", iconClass: "go-icon-svg", bgColor: "bg-white" },
   { name: "React", iconClass: "react-icon-svg", bgColor: "bg-white" },
   { name: "TypeScript", iconClass: "TS-icon-svg", bgColor: "ts-blue" },
-  { name: "JavaScript", iconClass: "JS-icon-svg", bgColor: "js-yellow" },
   { name: "HTML", iconClass: "HTML-icon-svg", bgColor: "bg-html-orange" },
   { name: "CSS", iconClass: "CSS-icon-svg", bgColor: "bg-css-blue" },
   { name: "Next.js", iconClass: "nextJS-icon-svg", bgColor: "bg-black" },
